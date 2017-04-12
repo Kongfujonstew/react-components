@@ -1,29 +1,21 @@
 var GroceryList = () => (
   <div>
-  <h1>My To Do List</h1>
-  <ToDoList todos={['yellow ledbetter', 'instate lovesong', 'h']}/>
+    <ul>My To Do List
+      {['yellow ledbetter', 'instate lovesong', 'h'].map(item =>
+        <GroceryListItem item={item} />
+
+      )}
+    </ul>
   </div>
 );
 
-var ToDoList = (props) => (
-  <div>
-  <ul>ListItems:
-
-    var todos = props.todos;
-    <li>{props.todos[0]}</li> 
-    <li>{props.todos[1]}</li> 
-    <GroceryListItem todo={props.todos[2]}/> 
-
-  </ul>
-  </div>
-
-)
 
 var GroceryListItem = (props) => (
-  <li>{props.todo}</li>
+  <li>{props.item}</li>
+);
 
 
-)
+
 ReactDOM.render(<GroceryList />, document.getElementById("app"));
 
 
